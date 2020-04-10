@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #33627c;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -14,4 +15,12 @@ code {
 
 .App {
   text-align: center;
+  height: 800px;
+  width: 500px;
+  margin: 0 auto;
+  background-color: #c0673e;
+}
+
+.App h1 {
+  color: #c1c1c1;
 }
