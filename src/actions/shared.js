@@ -5,9 +5,9 @@ import { receiveQuestions } from "./questions";
 
 export function handleInitialData(AUTHED_ID) {
   return (dispatch) => {
-    return getInitialData().then(({ users, tweets }) => {
+    return getInitialData().then(({ users, questions }) => {
       dispatch(receiveUsers(users));
-      dispatch(receiveQuestions(tweets));
+      dispatch(receiveQuestions(questions));
       dispatch(setAuthedUser(AUTHED_ID));
     });
   };
