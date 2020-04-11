@@ -34,7 +34,7 @@ class SignIn extends Component {
               <option disabled value="defaultV">
                 -- Select User --
               </option>
-              <option value="sarahedot">Sarah Edo</option>
+              <option value="sarahedo">Sarah Edo</option>
               <option value="tylermcginnis">Tyler McGinnis</option>
               <option value="johndoe">John Doe</option>
             </select>

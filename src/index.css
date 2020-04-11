@@ -15,12 +15,62 @@ code {
 
 .App {
   text-align: center;
-  height: 800px;
-  width: 500px;
+  height: 100%;
+  min-height: 800px;
+  width: 600px;
   margin: 0 auto;
   background-color: #c0673e;
 }
 
 .App h1 {
   color: #c1c1c1;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.avatar {
+  height: 75px;
+  width: 75px;
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  width: 100%;
+  max-width: 400px;
+  height: 150px;
+  padding: 10px;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid #c1c1c1;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.question-author-info {
+  height: 100%;
+  width: 120px;
+
+  border-radius: 3px;
+}
+
+.question-intro p {
+  padding-left: 20px;
+}
+
+.question-intro button {
+  margin-left: 20px;
+  width: 200px;
+  height: 30px;
+  background-color: #c1c1c1;
 }
