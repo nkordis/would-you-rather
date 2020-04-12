@@ -28,8 +28,12 @@ function mapStateToProps({ questions, users, authedUser }) {
   });
 
   return {
-    unAnsweredQuestionsIds: unAnsweredQuestions,
-    answeredQuestionsIds: answeredQuestions,
+    unAnsweredQuestionsIds: unAnsweredQuestions.sort(
+      (a, b) => questions[b].timestamp - questions[a].timestamp
+    ),
+    answeredQuestionsIds: answeredQuestions.sort(
+      (a, b) => questions[b].timestamp - questions[a].timestamp
+    ),
   };
 }
 
