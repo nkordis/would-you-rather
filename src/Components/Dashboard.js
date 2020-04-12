@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import ListQuestions from "./ListQuestions";
 
 class Dashboard extends Component {
@@ -42,4 +43,10 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser,
+  };
+}
+
+export default connect(mapStateToProps)(Dashboard);
