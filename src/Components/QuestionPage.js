@@ -1,9 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import QuestionToVote from "./QuestionToVote";
+import QuestionVoted from "./QuestionVoted";
 
-class QuestionPage extends Component {
-  render() {
-    return <div>Question Page</div>;
-  }
+function QuestionPage(props) {
+  return (
+    <div>
+      {props.hasVoted ? (
+        <QuestionVoted id={props.match.params.id} />
+      ) : (
+        <QuestionToVote id={props.match.params.id} />
+      )}
+    </div>
+  );
 }
 
-export default QuestionPage;
+function mapStateToProps({ users, authedUser }, { match }) {
+  const questionId = match.params.id;
+  const answeredQuestions = Object.keys(users[authedUser].answers);
+
+  return {
+    hasVoted: answeredQuestions.includes(questionId),
+  };
+}
+
+export default connect(mapStateToProps)(QuestionPage);

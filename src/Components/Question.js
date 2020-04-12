@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 class Question extends Component {
   render() {
@@ -9,8 +10,6 @@ class Question extends Component {
     const avatarURL = users[author].avatarURL;
     const nameAuthor = users[author].name;
     const options = question.optionOne.text;
-
-    // console.log("author:  " + author + "option.length:  " + options);
 
     return (
       <div className="question">
@@ -23,9 +22,13 @@ class Question extends Component {
         <div className="question-intro">
           <p>Would you rather:</p>
           <p>...{options}...</p>
-          <button>View Poll</button>
+
+          <button
+            onClick={() => this.props.history.push(`/question/${question.id}`)}
+          >
+            View Poll
+          </button>
         </div>
-        <div className="question-button"></div>
       </div>
     );
   }
@@ -41,4 +44,4 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
   };
 }
 
-export default connect(mapStateToProps)(Question);
+export default withRouter(connect(mapStateToProps)(Question));
