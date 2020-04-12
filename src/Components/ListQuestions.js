@@ -12,7 +12,7 @@ function ListQuestions(props) {
       <ul className="dashboard-list">
         {listToShow.map((id) => (
           <li key={id}>
-            <Question id={id} />
+            <Question questionId={id} />
           </li>
         ))}
       </ul>

@@ -39,7 +39,7 @@ class Nav extends Component {
                 />
               </li>
               <li>
-                <div onClick={this.handleChange}>logout</div>
+                <div onClick={this.handleChange}>Logout</div>
               </li>
             </ul>
           ) : null}
