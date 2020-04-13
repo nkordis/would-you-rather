@@ -35,7 +35,7 @@ function QuestionVoted(props) {
         >
           {optionA}
           <br />
-          {(votesOptionA / totalVotes) * 100} %
+          {Math.floor((votesOptionA / totalVotes) * 100)} %
           <br />
           {votesOptionA} out of {totalVotes} votes
           {hasVotedOptionA ? <div>You voted this option</div> : <div></div>}
@@ -51,7 +51,7 @@ function QuestionVoted(props) {
         >
           {optionB}
           <br />
-          {((totalVotes - votesOptionA) / totalVotes) * 100} %
+          {Math.floor(((totalVotes - votesOptionA) / totalVotes) * 100)} %
           <br />
           {totalVotes - votesOptionA} out of {totalVotes} votes
           {hasVotedOptionA ? <div></div> : <div>You voted this option</div>}
