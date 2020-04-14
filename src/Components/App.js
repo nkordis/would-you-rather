@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import Dashboard from "./Dashboard";
 import SignIn from "./SignIn";
@@ -7,6 +7,7 @@ import Nav from "./Nav";
 import QuestionPage from "./QuestionPage";
 import NewQuestion from "./NewQuestion";
 import Leaderboards from "./Leaderboards";
+import ErrorNotFound from "./ErrorNotFound";
 
 class App extends Component {
   render() {
@@ -19,10 +20,13 @@ class App extends Component {
             <SignIn />
           ) : (
             <div>
-              <Route path="/" exact component={Dashboard} />
-              <Route path="/question/:id" component={QuestionPage} />
-              <Route path="/new" component={NewQuestion} />
-              <Route path="/leaderboards" component={Leaderboards} />
+              <Switch>
+                <Route exact path="/" component={Dashboard} />
+                <Route exact path="/question/:id/" component={QuestionPage} />
+                <Route path="/new" component={NewQuestion} />
+                <Route path="/leaderboards" component={Leaderboards} />
+                <Route component={ErrorNotFound} />
+              </Switch>
             </div>
           )}
         </div>
