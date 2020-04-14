@@ -50,4 +50,9 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 # Resources
 
-- Compose me That: Function Composition in JavaScript - https://www.linkedin.com/pulse/compose-me-function-composition-javascript-kevin-greene/
+- Redux Middleware - https://redux.js.org/advanced/middleware
+- Asynchronicity in Redux - https://stackoverflow.com/questions/35411423/how-to-dispatch-a-redux-action-with-a-timeout/35415559#35415559
+- Presentational and Container Components - https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
+- Redux FAQ: Organizing State - https://redux.js.org/faq/organizing-state
+- How to choose between Redux's store and React's state? - https://github.com/reduxjs/redux/issues/1287
+- The Perils of Using a Common Redux Anti-Pattern - https://itnext.io/the-perils-of-using-a-common-redux-anti-pattern-344d778e59da
