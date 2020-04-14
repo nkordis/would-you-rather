@@ -23,9 +23,8 @@ function mapStateToProps({ users }) {
     usersListSorted: Object.keys(users).sort(
       (a, b) =>
         Object.keys(users[b].answers).length +
-        Object.keys(users[b].questions).length -
-        (Object.keys(users[a].answers).length +
-          Object.keys(users[a].answers).length)
+        users[b].questions.length -
+        (Object.keys(users[a].answers).length + users[a].questions.length)
     ),
   };
 }
