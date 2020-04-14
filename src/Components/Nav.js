@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { logOut } from "../actions/authedUser";
 
 class Nav extends Component {
-  handleChange(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
-
     console.log("Logout clicked!");
-  }
+    this.props.dispatch(logOut());
+  };
   render() {
     return (
       <nav className="nav">
@@ -39,7 +40,7 @@ class Nav extends Component {
                 />
               </li>
               <li>
-                <div onClick={this.handleChange}>Logout</div>
+                <div onClick={this.handleSubmit}>Logout</div>
               </li>
             </ul>
           ) : null}
