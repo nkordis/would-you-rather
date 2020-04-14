@@ -1,8 +1,9 @@
-import { saveQuestionAnswer } from "../utils/api";
+import { saveQuestionAnswer, saveQuestion } from "../utils/api";
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const VOTE_QUESTION = "VOTE_QUESTION";
 export const UNDO_VOTE_QUESTION = "UNDO_VOTE_QUESTION";
+export const ADD_QUESTION = "ADD_QUESTION";
 
 export function receiveQuestions(questions) {
   return {
@@ -39,6 +40,21 @@ export function handleVoteQuestion(info) {
       console.warn("handleVoteQuestion: ", e);
       dispatch(undoVoteQuestion(info));
       alert("The was an error voting the question. Try again.");
+    });
+  };
+}
+
+function addQuestion(question) {
+  return {
+    type: ADD_QUESTION,
+    question,
+  };
+}
+
+export function handleAddQuestion(question) {
+  return (dispatch) => {
+    return saveQuestion(question).then((question) => {
+      dispatch(addQuestion(question));
     });
   };
 }

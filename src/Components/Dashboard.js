@@ -28,7 +28,6 @@ class Dashboard extends Component {
   };
 
   render() {
-    console.log(this.state.unansweredQuestions);
     return (
       <div>
         <div className="choose-list-questions">

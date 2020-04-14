@@ -2,6 +2,7 @@ import {
   RECEIVE_QUESTIONS,
   VOTE_QUESTION,
   UNDO_VOTE_QUESTION,
+  ADD_QUESTION,
 } from "../actions/questions";
 
 export default function questions(state = {}, action) {
@@ -36,6 +37,11 @@ export default function questions(state = {}, action) {
             text: state[action.qid][action.answer].text,
           },
         },
+      };
+    case ADD_QUESTION:
+      return {
+        ...state,
+        [action.question.id]: action.question,
       };
     default:
       return state;
